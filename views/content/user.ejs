@@ -5,6 +5,7 @@
         <th scope="col">Nama</th>
         <th scope="col">Description</th>
         <th scope="col">Thumbnail</th>
+        <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,11 @@
                 <td><%= user.name %></td>
                 <td><%- user.description %></td>
                 <td><img src="<%= user.picture[0].thumbnailUrl %>" alt="<% user.name %> " srcset="" class="rounded-circle img-thumbnail" width="200" ></td>
+                <td>
+                    <a href="<%= `/users/${user.id}` %>">
+                        <button type="button" class="btn btn-info">info</button>
+                    </a>
+                </td>
             </tr>
             <% }) %>
         <% } %> 
