@@ -1,0 +1,25 @@
+<h1>Hololive List Page</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Nama</th>
+        <th scope="col">Description</th>
+        <th scope="col">Thumbnail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (users.length == 0) { %>
+            <tr>
+                <td colspan="2">Data User Masih Kosong !</td>
+            </tr>
+        <% } else { %>
+            <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%- user.description %></td>
+                <td><img src="<%= user.picture[0].thumbnailUrl %>" alt="<% user.name %> " srcset="" class="rounded-circle img-thumbnail" width="200" ></td>
+            </tr>
+            <% }) %>
+        <% } %> 
+    </tbody>
+</table>
