@@ -2,8 +2,13 @@ const express = require('express')
 const app = express()
 const port = 80
 
-app.get('/', (req, res) => {
-    res.send("Berhasil instalasi Web Server")
+//using view engine ejs
+app.set('view engine', 'ejs');
+
+//default route
+app.use('/', (req, res) => {
+    res.status(404)
+    res.send("Maaf halaman yang anda buka tidak ada !")
 })
 
 app.listen(port, () => {
